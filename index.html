@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fellowship Attendance Dashboard</title>
+    
+    <!-- App Icons (Favicon & Home Screen Icon) -->
+    <!-- Using a data URI for a medical cross/hospital icon to keep it single-file -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M50 20v60M20 50h60%22 stroke=%22white%22 stroke-width=%2212%22 stroke-linecap=%22round%22/></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%232563eb%22/><path d=%22M50 20v60M20 50h60%22 stroke=%22white%22 stroke-width=%2212%22 stroke-linecap=%22round%22/></svg>">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main Card -->
+    <div class="bg-white max-w-md w-full rounded-2xl shadow-xl overflow-hidden border border-gray-100 animate-fade-in">
+        
+        <!-- Logo Section -->
+        <div class="bg-white pt-6 pb-2 flex justify-center">
+            <svg class="h-24 w-auto" version="1.1" id="svg1" width="909.33331" height="302.85333" viewBox="0 0 909.33331 302.85333" sodipodi:docname="MSHS_Masterbrand_CMYK_Hrztl_no_Reg.eps" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+                <defs id="defs1" />
+                <sodipodi:namedview id="namedview1" pagecolor="#ffffff" bordercolor="#000000" borderopacity="0.25" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#d1d1d1">
+                    <inkscape:page x="0" y="0" inkscape:label="1" id="page1" width="909.33331" height="302.85333" margin="0" bleed="0" />
+                </sodipodi:namedview>
+                <g id="g1" inkscape:groupmode="layer" inkscape:label="1">
+                    <g id="group-R5">
+                        <path id="path2" d="M 1243.38,17.8594 H 969.453 L 2261.29,1969.99 2406.68,1759.43 1243.38,17.8594" style="fill:#00adef;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path3" d="M 1728.14,17.8594 H 1454.16 L 2501.87,1621.48 2647.23,1410.89 1728.14,17.8594" style="fill:#00adef;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path4" d="m 2085.35,2224.82 v 0 c -9.37,13.57 -25.47,46.56 -61.29,46.56 -36.64,0 -51.91,-33.91 -61.29,-46.56 h 0.08 L 484.727,17.8594 H 758.691 L 2168.87,2103.86 l -83.52,120.96" style="fill:#00adef;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path5" d="m 1382.91,1899.95 h 0.04 c -9.45,13.58 -25.57,46.47 -61.35,46.47 -36.66,0 -51.89,-33.81 -61.31,-46.47 h 0.08 L 0,17.8594 H 273.965 L 1464.86,1776.65 l -81.95,123.3" style="fill:#00adef;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path6" d="m 1382.58,1899.86 h 0.08 c -9.46,13.49 -25.53,46.48 -61.31,46.48 -36.7,0 -51.9,-33.91 -61.31,-46.48 L 1177.25,1775.83 2365.66,17.8594 h 273.95 L 1382.58,1899.86" style="fill:#d9058d;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path7" d="m 2085.08,2224.74 h 0.04 c -9.42,13.57 -25.55,46.56 -61.33,46.56 -36.64,0 -51.88,-33.91 -61.29,-46.56 L 1879.8,2100.77 3334.45,17.8594 H 3608.4 L 2085.08,2224.74" style="fill:#d9058d;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path8" d="m 2406.45,1759.13 -145.32,210.57 -141.01,-213.07 145.5,-208.34 140.83,210.84" style="fill:#21236a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path9" d="m 2647.07,1410.62 -145.39,210.56 -138.67,-212.28 145.47,-208.32 138.59,210.04" style="fill:#21236a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path10" d="M 2850.08,17.8594 H 3124.1 L 1794.9,1972.82 1651.35,1759.66 2850.08,17.8594" style="fill:#d9058d;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path11" d="m 2085.08,2224.74 h 0.04 c -9.42,13.57 -25.55,46.56 -61.33,46.56 -4.53,0 -8.75,-0.53 -12.7,-1.46 -27.46,-6.76 -40.11,-33.97 -48.32,-45.02 h 0.08 l -74.84,-111.74 -8.21,-12.31 145.82,-208.82 143.09,211.64 -83.63,121.15" style="fill:#21236a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path12" d="m 1794.9,1972.82 -143.55,-213.16 143.69,-208.79 142.97,211.47 -143.11,210.48" style="fill:#21236a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path13" d="m 2034.73,1202.59 140.66,210.61 -143.16,210.6 -140.86,-212.87 143.36,-208.34" style="fill:#21236a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path14" d="m 2277.3,850.172 138.32,209.688 -143.16,210.52 -138.48,-211.99 143.32,-208.218" style="fill:#21236a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path15" d="m 1382.66,1899.86 c -9.46,13.49 -25.53,46.48 -61.31,46.48 -4.57,0 -8.79,-0.53 -12.74,-1.46 -27.44,-6.74 -40.09,-33.87 -48.32,-44.93 h 0.08 l -83.12,-124.12 143.41,-212.15 144.2,212.97 -1.09,1.66 -81.19,121.55 h 0.08" style="fill:#21236a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path16" d="m 1704.82,1417.39 -141.19,211.39 -142.81,-213.24 141.37,-209.12 142.63,210.97" style="fill:#21236a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path17" d="m 1941.52,1063.04 -140.86,210.88 -140.52,-212.38 141.01,-208.618 140.37,210.118" style="fill:#21236a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path18" d="m 2181.05,704.371 -140.7,210.699 -138.2,-211.519 140.86,-208.422 138.04,209.242" style="fill:#21236a;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path19" d="m 3778.69,1018.32 c 58.32,0 102.6,11.88 102.6,124.21 v 482.76 l -85.31,4.32 v 36.72 l 261.35,-4.31 167.41,-459.01 h 1.08 l 169.56,459.01 258.13,4.31 v -36.72 l -87.48,-4.32 v -602.64 l 87.48,-4.33 v -36.711 c -43.21,0 -124.2,4.309 -167.41,4.309 -43.2,0 -119.88,-4.309 -163.08,-4.309 v 36.711 l 86.4,4.33 v 555.12 h -2.15 L 4194.5,983.762 h -52.92 l -214.93,594.008 h -2.16 v -435.24 c 0,-112.33 42.12,-124.21 111.24,-124.21 v -36.711 c -53.99,0 -85.32,4.309 -128.51,4.309 -43.21,0 -74.52,-4.309 -128.53,-4.309 v 36.711" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path20" d="m 5040.14,1231.09 c 0,146.88 -29.16,226.8 -105.84,226.8 -74.52,0 -104.77,-79.92 -104.77,-226.8 0,-147.97 30.25,-226.8 104.77,-226.8 76.68,0 105.84,78.83 105.84,226.8 z m -368.28,-5.4 c 0,183.6 124.19,268.92 262.44,268.92 140.4,0 263.52,-74.52 263.52,-258.12 0,-184.68 -120.96,-268.931 -263.52,-268.931 -140.4,0 -262.44,73.441 -262.44,258.131" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path21" d="m 5289.6,1380.13 c 0,59.4 -18.36,59.4 -73.44,59.4 v 36.72 l 216.01,10.8 v -297 c 0,-103.68 2.16,-156.6 69.12,-156.6 52.92,0 119.88,62.64 119.88,168.48 v 178.2 c 0,59.4 -24.84,59.4 -72.36,59.4 v 36.72 l 214.92,10.8 V 1024.8 l 73.45,-2.15 v -36.732 l -207.37,-10.797 -3.24,96.119 h -1.08 c -34.56,-58.32 -95.04,-101.51 -180.36,-101.51 -113.4,0 -155.53,58.32 -155.53,181.44 v 228.96" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path22" d="m 6147.12,1018.32 v -36.711 c -51.85,0 -79.92,4.309 -142.57,4.309 -62.64,0 -91.8,-4.309 -144.72,-4.309 v 36.711 l 73.44,5.4 v 358.57 c 0,57.24 -18.36,57.24 -73.44,57.24 v 36.72 l 207.37,10.8 2.16,-93.96 h 1.07 c 36.73,59.4 95.05,102.6 180.37,102.6 90.71,0 155.52,-55.08 155.52,-191.16 v -280.81 l 74.52,-5.4 v -36.711 c -52.92,0 -82.08,4.309 -144.73,4.309 -62.63,0 -89.64,-4.309 -142.56,-4.309 v 36.711 l 71.28,5.4 v 249.49 c 0,116.64 -12.95,158.76 -70.19,158.76 -52.92,0 -118.81,-62.64 -118.81,-168.48 v -239.77 l 71.29,-5.4" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path23" d="m 6678.47,1125.25 c -2.16,-66.97 0,-103.68 44.28,-103.68 39.96,0 62.64,57.23 62.64,57.23 l 34.56,-12.96 c 0,0 -22.67,-99.36 -136.08,-99.36 -132.84,0 -146.88,72.37 -146.88,156.6 v 311.05 h -81 v 42.12 h 81 v 180.36 c 81,0 141.48,20.52 141.48,20.52 v -200.88 h 120.96 v -42.12 h -120.96 v -308.88" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path24" d="m 3866.17,273.25 c 8.64,-48.609 78.84,-232.2109 220.32,-232.2109 88.57,0 124.21,49.6914 124.21,105.8519 0,199.8 -372.6,88.55 -372.6,361.8 0,160.918 132.84,213.84 231.12,213.84 89.64,0 136.08,-29.16 153.36,-29.16 18.36,0 23.76,23.758 23.76,23.758 h 35.64 c 0,-35.641 -2.16,-61.559 -2.16,-96.117 0,-50.762 2.16,-79.922 2.16,-114.481 h -35.64 c -8.64,47.52 -70.2,179.278 -185.76,179.278 -64.81,0 -109.09,-39.957 -109.09,-96.118 0,-183.601 383.41,-77.761 383.41,-367.211 C 4334.9,63.7188 4215.02,0 4083.25,0 c -114.47,0 -173.88,38.8789 -193.32,38.8789 -22.67,0 -27,-25.918 -27,-25.918 h -35.64 c 0,51.8477 3.25,83.168 3.25,135.0001 0,49.687 -3.25,81.008 -3.25,125.289 h 38.88" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path25" d="m 4520.65,785.172 c 44.28,0 86.4,-29.16 86.4,-82.082 0,-52.918 -42.12,-82.078 -86.4,-82.078 -45.36,0 -87.48,29.16 -87.48,82.078 0,52.922 42.12,82.082 87.48,82.082 z M 4664.3,58.3203 V 21.6094 c -51.85,0 -82.08,4.3125 -144.73,4.3125 -62.64,0 -91.8,-4.3125 -144.72,-4.3125 v 36.7109 l 73.44,5.3985 V 420.129 c 0,59.402 -19.44,59.402 -73.44,59.402 v 36.719 l 216,10.801 V 63.7188 l 73.45,-5.3985" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path26" d="M 4974.25,58.3203 V 21.6094 c -51.85,0 -79.92,4.3125 -142.57,4.3125 -62.64,0 -91.8,-4.3125 -144.72,-4.3125 v 36.7109 l 73.44,5.3985 V 422.289 c 0,57.242 -18.36,57.242 -73.44,57.242 v 36.719 l 207.37,10.801 2.15,-93.961 h 1.08 c 36.73,59.398 95.05,102.601 180.37,102.601 90.71,0 155.52,-55.082 155.52,-191.171 V 63.7188 l 74.52,-5.3985 V 21.6094 c -52.92,0 -82.08,4.3125 -144.73,4.3125 -62.63,0 -89.64,-4.3125 -142.56,-4.3125 v 36.7109 l 71.28,5.3985 V 313.211 c 0,116.641 -12.96,158.758 -70.19,158.758 -52.92,0 -118.81,-62.641 -118.81,-168.481 V 63.7188 l 71.29,-5.3985" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path27" d="m 5636.28,265.691 c -133.92,2.161 -164.16,-33.48 -164.16,-101.531 0,-63.719 24.84,-96.1209 70.2,-96.1209 42.12,0 89.64,36.7309 91.8,114.4809 z M 5883.6,104.77 c 0,0 -15.11,-98.28172 -126.35,-98.28172 -52.92,0 -97.21,21.58982 -115.57,75.59372 h -2.16 C 5615.76,36.7188 5570.4,2.16016 5491.56,2.16016 c -75.6,0 -165.24,34.55864 -165.24,147.96084 0,140.41 165.24,153.367 312.13,152.289 v 52.918 c 3.23,86.402 -4.33,143.641 -74.52,143.641 -54.01,0 -77.77,-27 -83.17,-37.797 0,0 23.76,-12.961 23.76,-49.684 0,-37.797 -28.08,-64.797 -72.36,-64.797 -42.12,0 -72.37,25.918 -72.37,69.118 0,76.679 98.29,119.882 214.94,119.882 188.99,0 205.19,-106.921 203.03,-208.441 l -5.4,-204.121 c -1.07,-33.4884 9.73,-56.1602 33.49,-56.1602 31.32,0 42.12,46.4292 42.12,46.4292 l 35.63,-8.628" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                        <path id="path28" d="m 6030.47,785.172 c 44.28,0 86.4,-29.16 86.4,-82.082 0,-52.918 -42.12,-82.078 -86.4,-82.078 -45.36,0 -87.48,29.16 -87.48,82.078 0,52.922 42.12,82.082 87.48,82.082 z M 6174.11,58.3203 V 21.6094 c -51.84,0 -82.08,4.3125 -144.73,4.3125 -62.63,0 -91.79,-4.3125 -144.71,-4.3125 v 36.7109 l 73.44,5.3985 V 420.129 c 0,59.402 -19.45,59.402 -73.44,59.402 v 36.719 l 215.99,10.801 V 63.7188 l 73.45,-5.3985" style="fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none" transform="matrix(0.13333333,0,0,-0.13333333,0,302.85333)" />
+                    </g>
+                </g>
+            </svg>
+        </div>
+
+        <!-- Header Section -->
+        <div class="bg-blue-600 p-6 text-center relative overflow-hidden">
+            <!-- Decorative circle -->
+            <div class="absolute top-0 left-0 w-32 h-32 bg-white opacity-10 rounded-full -translate-x-10 -translate-y-10"></div>
+            
+            <h1 class="text-white text-2xl font-bold tracking-tight relative z-10">
+                Attendance Dashboard
+            </h1>
+            <p class="text-blue-100 text-sm mt-1 relative z-10 font-medium">
+                Fellowship Program Check-In
+            </p>
+        </div>
+
+        <!-- Content Section -->
+        <div class="p-8 text-center space-y-6">
+            
+            <!-- Date Display -->
+            <div class="space-y-2 pb-2">
+                <p class="text-gray-400 text-xs font-semibold uppercase tracking-wider">Current Date</p>
+                <div class="text-gray-800 text-xl font-medium" id="current-date-display">
+                    Loading...
+                </div>
+            </div>
+
+            <!-- Grand Rounds Button -->
+            <div>
+                <a id="gr-link" href="#" target="_blank" 
+                   class="group relative inline-flex items-center justify-center w-full px-6 py-4 text-white transition-all duration-200 bg-blue-600 rounded-xl hover:bg-blue-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-600">
+                    <span class="absolute left-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+                    
+                    <div class="relative flex items-center gap-3">
+                        <!-- Custom SVG Icon: Presenter, Board, and Audience -->
+                        <svg class="w-8 h-8 text-blue-100" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <!-- The Board (Background) -->
+                            <rect x="9" y="3" width="13" height="10" rx="1"></rect>
+                            
+                            <!-- The Presenter (Head & Arm Pointing) -->
+                            <circle cx="7" cy="10" r="2.5"></circle>
+                            <path d="M7 13c0 0 2-1 5-4"></path> <!-- Arm pointing to board -->
+                            <path d="M4.5 16c1.5-2 2.5-3 2.5-3"></path> <!-- Body hint -->
+
+                            <!-- The Audience (Heads & Shoulders) -->
+                            <path d="M4 21v-1a2 2 0 0 1 2-2 2 2 0 0 1 2 2v1"></path>
+                            <path d="M10 21v-1a2 2 0 0 1 2-2 2 2 0 0 1 2 2v1"></path>
+                            <path d="M16 21v-1a2 2 0 0 1 2-2 2 2 0 0 1 2 2v1"></path>
+                        </svg>
+                        <span class="text-lg font-semibold">Grand Rounds</span>
+                    </div>
+                </a>
+                <p class="mt-2 text-xs text-gray-400">
+                    ID: <span id="gr-id-display" class="font-mono text-gray-500">...</span>
+                </p>
+            </div>
+
+            <!-- Academic Half Day Button -->
+            <div>
+                <a id="ahd-link" href="#" target="_blank" 
+                   class="group relative inline-flex items-center justify-center w-full px-6 py-4 text-white transition-all duration-200 bg-indigo-600 rounded-xl hover:bg-indigo-700 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
+                    <span class="absolute left-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+                    
+                    <div class="relative flex items-center gap-3">
+                        <i class="fa-solid fa-graduation-cap text-xl text-indigo-100"></i>
+                        <span class="text-lg font-semibold">Academic Half Day</span>
+                    </div>
+                </a>
+                <p class="mt-2 text-xs text-gray-400">
+                    ID: <span id="ahd-id-display" class="font-mono text-gray-500">...</span>
+                </p>
+            </div>
+
+        </div>
+
+        <!-- Footer -->
+        <div class="bg-gray-50 px-6 py-4 border-t border-gray-100 text-center">
+            <p class="text-xs text-gray-400">
+                This site is in testing, please reach out to Frank with any issues or bugs you encounter.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Configuration
+            const grConfig = {
+                baseDate: '2026-01-28',
+                baseID: 396711
+            };
+            const ahdConfig = {
+                baseDate: '2026-01-23',
+                baseID: 396754
+            };
+            
+            // DOM Elements
+            const dateDisplay = document.getElementById('current-date-display');
+            
+            const grLink = document.getElementById('gr-link');
+            const grIdDisplay = document.getElementById('gr-id-display');
+            
+            const ahdLink = document.getElementById('ahd-link');
+            const ahdIdDisplay = document.getElementById('ahd-id-display');
+
+            // Logic Helper
+            // mode: 'grand_rounds' (jumps day after start) or 'standard_weekly' (jumps 7 days after start)
+            function calculateID(baseDateStr, startID, mode) {
+                const now = new Date();
+                const baseDate = new Date(baseDateStr + 'T00:00:00');
+                const currentDate = new Date(now);
+                // Reset hours to ensure clean day comparison
+                currentDate.setHours(0, 0, 0, 0);
+
+                const diffTime = currentDate - baseDate;
+                const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+
+                // If before the start date, return base ID
+                if (diffDays < 0) return startID;
+
+                if (mode === 'grand_rounds') {
+                    // Logic: Base + 1 (immediate jump next day) + 1 every 7 days thereafter
+                    // Day 0: +0
+                    // Day 1: +1 (remains +1 until Day 7)
+                    // Day 8: +2
+                    if (diffDays < 1) return startID;
+                    const weeksPassed = Math.floor((diffDays - 1) / 7);
+                    return startID + 1 + weeksPassed;
+                } else {
+                    // Logic: Academic Half Day (Standard Weekly)
+                    // Day 0-6: +0 (Remains same for full first week)
+                    // Day 7: +1
+                    return startID + Math.floor(diffDays / 7);
+                }
+            }
+
+            function updateDashboard() {
+                const now = new Date();
+                
+                // 1. Display Current Date
+                const dateOptions = { 
+                    weekday: 'long', 
+                    year: 'numeric', 
+                    month: 'long', 
+                    day: 'numeric' 
+                };
+                dateDisplay.textContent = now.toLocaleDateString('en-US', dateOptions);
+
+                // 2. Calculate IDs with specific modes
+                const currentGrID = calculateID(grConfig.baseDate, grConfig.baseID, 'grand_rounds');
+                const currentAhdID = calculateID(ahdConfig.baseDate, ahdConfig.baseID, 'standard_weekly');
+
+                // 3. Update Links
+                const baseUrl = "https://www.new-innov.com/conf/check-in/conference/";
+                
+                grLink.href = `${baseUrl}${currentGrID}/details`;
+                grIdDisplay.textContent = currentGrID;
+
+                ahdLink.href = `${baseUrl}${currentAhdID}/details`;
+                ahdIdDisplay.textContent = currentAhdID;
+            }
+
+            // Run immediately
+            updateDashboard();
+
+            // Auto-update every minute
+            setInterval(updateDashboard, 60000);
+        });
+    </script>
+</body>
+</html>
